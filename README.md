@@ -24,11 +24,3 @@
   <img width="12" />
   <img src="https://avatars.githubusercontent.com/u/10872782?s=200&v=4" height="40" alt="riscv logo"  />
 </div>
-
-###
-
-<div align="center">
-  <img src="https://github-read-medium-git-main.pahlevikun.vercel.app/latest?limit=4&theme=radical" alt="Layout with last medium posts"  />
-</div>
-
-###
