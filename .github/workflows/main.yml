@@ -4,8 +4,6 @@ on:
   schedule:
     - cron: "0 0 * * *" # Runs once daily at midnight
   workflow_dispatch:
-  push:
-    branches: [ main ]
 
 jobs:
   build:
@@ -15,14 +13,10 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
-
-      # Создаем папку profile, если она еще не создана в репозитории
-      - name: Create profile directory
-        run: mkdir -p profile
+      - uses: actions/checkout@v6
 
       - name: Generate stats card
-        uses: stats-organization/github-readme-stats-action@v2.0.1
+        uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
           options: username=${{ github.repository_owner }}&show_icons=true
@@ -30,7 +24,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate top languages card
-        uses: stats-organization/github-readme-stats-action@v2.0.1
+        uses: stats-organization/github-readme-stats-action@v2
         with:
           card: top-langs
           options: username=${{ github.repository_owner }}&layout=compact&langs_count=6
@@ -38,12 +32,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Generate pin card
-        uses: stats-organization/github-readme-stats-action@v2.0.1
+        uses: stats-organization/github-readme-stats-action@v2
         with:
           card: pin
-          # ИСПРАВЛЕНО: Укажите здесь имя вашего ЛИЧНОГО популярного репозитория
-          options: username=${{ github.repository_owner }}&repo=riscv-em
-          path: profile/pin-my-repo.svg
+          options: username=stats-organization&repo=github-readme-stats
+          path: profile/pin-stats-organization-github-readme-stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit cards
