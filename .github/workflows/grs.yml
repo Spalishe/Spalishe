@@ -37,7 +37,7 @@ jobs:
           card: pin
           options: username=${{github.repository_owner}}&repo=riscv-em
           path: profile/pin-stats-organization-riscv-em.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.STAT_TOKEN }}
 
       - name: Commit cards
         run: |
