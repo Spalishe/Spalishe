@@ -101,7 +101,7 @@
         y="0"
         class="header"
         data-testid="header"
-      >riscv-em</text>
+      >rv64-vm</text>
     </g>
       </g>
     
